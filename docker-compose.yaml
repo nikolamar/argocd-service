@@ -1,0 +1,28 @@
+version: "3"
+
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+  nodejs:
+    container_name: nodejs
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      target: build
+    command: npm run start
+    env_file:
+      - ./.env
+    environment:
+      - NODE_ENV=production
+    networks:
+      - app-tier
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
+volumes:
+  data:
