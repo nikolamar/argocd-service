@@ -1,6 +1,20 @@
 apiVersion: argoproj.io/v2.5.9
 kind: Application
 metadata:
-  name: argocd-service
+  name: myapp-argocd-service
   namespace: argocd
 spec:
+  project: default
+  source:
+    path: dev
+    repoURL: https://github.com/nikolamar/argocd-service.git
+    targetRevision: HEAD
+  destination:
+    namespace: myapp
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
