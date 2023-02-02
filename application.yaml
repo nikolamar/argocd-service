@@ -1,4 +1,4 @@
-apiVersion: argoproj.io/v2.5.9
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: myapp-argocd-service
