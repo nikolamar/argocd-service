@@ -7,8 +7,7 @@
     "build": "tsc --build tsconfig.json",
     "start": "npx ts-node src/app.ts",
     "start:prod": "node dist/app.js",
-    "start:docker": "docker compose --env-file .env up --build",
-    "build:docker": "docker build -t argocd-service ."
+    "start:docker": "docker compose --env-file .env up --build"
   },
   "keywords": [],
   "author": "",
