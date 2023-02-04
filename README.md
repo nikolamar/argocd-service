@@ -1,8 +1,10 @@
 ## Install
 
 
-Kubernetes tools https://kubernetes.io/docs/tasks/tools/
-Argocd https://argo-cd.readthedocs.io/en/stable/getting_started/
+Kubernetes
+https://kubernetes.io/docs/tasks/tools/
+Argocd
+https://argo-cd.readthedocs.io/en/stable/getting_started/
 
 
 ## Run local
