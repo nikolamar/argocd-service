@@ -3,7 +3,7 @@ kind: Deployment
 
 # deploy
 metadata:
-  name: myapp
+  name: myapp-deploy
 
 spec:
   # replicas
