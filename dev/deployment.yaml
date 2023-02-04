@@ -26,6 +26,6 @@ spec:
     spec:
       containers:
         - name: myapp
-          image: nikolamar/svc-nodejs:0.0.1
+          image: nikolamar/svc-nodejs:0.0.1 # use your image
           ports:
             - containerPort: 3000
