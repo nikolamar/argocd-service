@@ -6,8 +6,7 @@
   "scripts": {
     "build": "tsc --build tsconfig.json",
     "start": "npx ts-node src/app.ts",
-    "start:prod": "node dist/app.js",
-    "start:docker": "docker compose --env-file .env up --build"
+    "start:prod": "node dist/app.js"
   },
   "keywords": [],
   "author": "",
