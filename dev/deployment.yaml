@@ -1,12 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
+
+# deploy
 metadata:
   name: myapp
+
 spec:
+  # replicas
+  replicas: 2
   selector:
     matchLabels:
       app: myapp
-  replicas: 4
+  # upgrade pod strategy
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  # pod template
   template:
     metadata:
       labels:
@@ -14,6 +26,6 @@ spec:
     spec:
       containers:
         - name: myapp
-          image: nikolamar/argocd-service:v1.1.0
+          image: nikolamar/svc-nodejs:0.0.1
           ports:
             - containerPort: 3000

@@ -5,21 +5,21 @@ networks:
     driver: bridge
 
 services:
-  nodejs:
+  svc-nodejs:
     container_name: nodejs
     build:
-      context: ./
-      dockerfile: ./Dockerfile
+      context: .
+      dockerfile: svc-nodejs/Dockerfile
       target: build
     command: npm run start
     env_file:
       - ./.env
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
     networks:
       - app-tier
     ports:
-      - ${APP_PORT}:${APP_PORT}
+      - ${SVC_NODEJS_PORT}:${SVC_NODEJS_PORT}
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
