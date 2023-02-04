@@ -7,7 +7,7 @@ Argocd
 https://argo-cd.readthedocs.io/en/stable/getting_started/
 
 
-## Run local
+## Run Kubernetes
 
 
 Start local Kubernetes
@@ -46,4 +46,13 @@ docker push my-repository/svc-nodejs:0.0.1
 Specify your image in deployment.yaml file and create app with Kubernetes
 ```
 kubectl apply -f application.yaml 
+```
+
+
+## Run with docker compose
+
+
+Run docker-compose.yaml file docker
+```
+docker compose --env-file .env up --build
 ```
