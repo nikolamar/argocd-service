@@ -33,7 +33,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 Build docker image
 ```
-docker buildx build --push --platform linux/arm64/v8,linux/amd64 --tag docker-repository/svc-nodejs:0.0.1 .
+docker buildx build --push --platform linux/arm64,linux/amd64 --tag docker-repository/svc-nodejs:0.0.1 .
 ```
 
 
