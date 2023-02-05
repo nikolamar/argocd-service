@@ -28,7 +28,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 ```
 
 
-## Create nodejs service
+## Create service
 
 
 Build docker image
@@ -49,10 +49,16 @@ kubectl apply -f application.yaml
 ```
 
 
-## Run with docker compose
+## Run with docker
 
 
-Run docker-compose.yaml file docker
+Run with docker cli
+```
+docker run --rm -it -p 127.0.0.1:3000:3000 my-repository/svc-nodejs:0.0.1
+```
+
+
+Run with docker cli using docker-compose.yaml file
 ```
 docker compose --env-file .env up --build
 ```
