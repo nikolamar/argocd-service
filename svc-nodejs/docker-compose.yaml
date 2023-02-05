@@ -9,7 +9,7 @@ services:
     container_name: nodejs
     build:
       context: .
-      dockerfile: svc-nodejs/Dockerfile
+      dockerfile: ./Dockerfile
       target: build
     command: npm run start
     env_file:
