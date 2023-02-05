@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    path: templates
+    path: svc-nodejs/templates
     repoURL: https://github.com/nikolamar/argocd-service.git
     targetRevision: HEAD
   destination:
