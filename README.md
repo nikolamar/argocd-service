@@ -33,13 +33,13 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 Build docker image
 ```
-docker build -t docker-repository/svc-nodejs:0.0.1 .
+docker buildx build --push --platform linux/arm64/v8,linux/amd64 --tag docker-repository/svc-nodejs:0.0.1 .
 ```
 
 
 Push docker image
 ```
-docker push my-repository/svc-nodejs:0.0.1
+docker push docker-repository/svc-nodejs:0.0.1
 ```
 
 
@@ -54,7 +54,7 @@ kubectl apply -f application.yaml
 
 Run with docker cli
 ```
-docker run --rm -it -p 127.0.0.1:3000:3000 my-repository/svc-nodejs:0.0.1
+docker run --rm -it -p 127.0.0.1:3000:3000 docker-repository/svc-nodejs:0.0.1
 ```
 
 
