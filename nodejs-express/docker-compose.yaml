@@ -1,7 +1,8 @@
 version: "3"
 
 networks:
-  app-tier:
+  my-network:
+    name: my-network
     driver: bridge
 
 services:
@@ -17,7 +18,7 @@ services:
     environment:
       - NODE_ENV=development
     networks:
-      - app-tier
+      - my-network
     ports:
       - ${APP_PORT}:${APP_PORT}
     volumes:
