@@ -4,7 +4,7 @@ const service = express();
 const port = 3000;
 
 service.get("/", (request, response) => {
-  response.send("v1.0.0");
+  response.send("Hello World!");
 });
 
 service.listen(port, () => {
