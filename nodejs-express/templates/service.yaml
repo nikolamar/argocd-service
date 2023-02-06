@@ -6,7 +6,7 @@ metadata:
 
 spec:
   selector:
-    app: myapp
+    app: nodejs-express
   ports:
     - port: 3000
       protocol: TCP

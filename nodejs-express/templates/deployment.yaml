@@ -10,7 +10,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: myapp
+      app: nodejs-express
   # upgrade pod strategy
   minReadySeconds: 10
   strategy:
@@ -22,10 +22,10 @@ spec:
   template:
     metadata:
       labels:
-        app: myapp
+        app: nodejs-express
     spec:
       containers:
-        - name: myapp
+        - name: nodejs-express
           image: nikolamar/nodejs-express:0.0.1 # use your image
           ports:
             - containerPort: 3000

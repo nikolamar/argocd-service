@@ -12,7 +12,7 @@ spec:
     repoURL: https://github.com/nikolamar/kubernetes-templates.git
     targetRevision: HEAD
   destination:
-    namespace: myapp
+    namespace: nodejs-express
     server: https://kubernetes.default.svc
   syncPolicy:
     syncOptions:
