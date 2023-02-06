@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     path: nodejs-express/templates
-    repoURL: https://github.com/nikolamar/argocd-service.git
+    repoURL: https://github.com/nikolamar/kubernetes-templates.git
     targetRevision: HEAD
   destination:
     namespace: myapp
