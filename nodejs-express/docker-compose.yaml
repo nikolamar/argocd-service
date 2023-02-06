@@ -19,10 +19,11 @@ services:
     networks:
       - app-tier
     ports:
-      - ${SVC_NODEJS_PORT}:${SVC_NODEJS_PORT}
+      - ${APP_PORT}:${APP_PORT}
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
 
 volumes:
-  data:
+  nodejs-volume:
+    name: nodejs-volume
