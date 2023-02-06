@@ -5,7 +5,7 @@ networks:
     driver: bridge
 
 services:
-  svc-nodejs:
+  nodejs:
     container_name: nodejs
     build:
       context: .
