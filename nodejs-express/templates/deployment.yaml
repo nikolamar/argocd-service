@@ -26,6 +26,6 @@ spec:
     spec:
       containers:
         - name: nodejs-express
-          image: nikolamar/nodejs-express:0.0.3 # use your image
+          image: nikolamar/nodejs-express:0.0.4 # use your image
           ports:
             - containerPort: 3000
