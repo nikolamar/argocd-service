@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # Dependencies
-FROM node:alpine AS deps
+FROM node:18-alpine AS deps
 LABEL "maintainer"="Nikola Marjanovic  <nikolamar@gmail.com>"
 
 RUN apk add --no-cache libc6-compat
@@ -11,7 +11,7 @@ COPY package.json package-lock.json ./
 RUN  npm install --production
 
 # Build
-FROM node:alpine AS builder
+FROM node:18-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -19,7 +19,7 @@ COPY . .
 RUN npm run build
 
 # Runner
-FROM node:alpine AS runner
+FROM node:18-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
