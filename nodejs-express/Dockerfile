@@ -4,7 +4,6 @@
 FROM node:18-alpine AS deps
 LABEL "maintainer"="Nikola Marjanovic  <nikolamar@gmail.com>"
 
-RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 COPY package.json package-lock.json ./
@@ -25,12 +24,13 @@ WORKDIR /app
 ENV NODE_ENV production
 
 RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 express
 
-COPY --from=builder /app/dist ./dist
+COPY --from=builder --chown=express:nodejs /app/dist ./dist
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
 
-USER nodejs
+USER express
 
 EXPOSE 3000
 
