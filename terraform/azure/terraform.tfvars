@@ -1,2 +1,5 @@
 group_name = "aksGroup"
 location = "westeurope"
+service_principal_name = "aksPrincipal"
+subscription_id = "ad92c653-4f06-4a9e-a252-879e9c6b0237"
+key_vault_name = "aksKeyVault"
